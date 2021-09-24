@@ -1,25 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
+import volcano from "./images/volcano.jpg";
+import football from "./images/football.jpg";
+import computer from "./images/computer.jpg";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="newsSection">
+      <NewsSectionFunction src={volcano} title="Hundreds more evacuated as La Palma lava nears sea" tag="Europe" />
+      <NewsSectionFunction src={football} title="NFL star Jones loses father's ashes while scoring touchdown" tag="American Football" />
+      <NewsSectionFunction src={computer} title="Staff to get day-one right to ask for home working" tag="Business" />
     </div>
   );
-}
+};
+
+const NewsSectionFunction = (props) => {
+  return (
+    <div className="news">
+      <img src={props.src} alt=" " />
+      <h3>{props.title}</h3>
+      <p>{props.tag}</p>
+    </div>
+  );
+};
 
 export default App;
